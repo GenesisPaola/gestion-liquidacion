@@ -1,0 +1,75 @@
+.container{
+    background-color: rgb(204, 192, 241);
+}
+.img-thumbnail {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .media {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .media .media-body {
+    margin-left: 10px; /* Ajusta la separación entre la imagen y el texto según tus necesidades */
+  }
+  
+  .img-thumbnail_2 {
+    width: 400px;
+    height: 400px;
+  }
+  .form_2{
+    margin-left: 5%;
+    margin-right: 0;
+    width: 500px;
+    height: 500px;
+  }
+
+  .fa-github-square{
+    font-size: 350%;
+}
+
+.text-right {
+    text-align: right;
+  }
+
+  .container_form_inicio {
+    margin-top: 150px; /* Ajusta el valor del margen superior según tus necesidades */
+  }
+
+  .button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .button-row {
+    margin-bottom: 10px;
+  }
+  
+  .boton11 {
+    width: 22%;
+    padding: 20px 50px;
+    margin: 10 15px;
+    background-color: #d37dcd;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  .boton12 {
+    width: 22%;
+    padding: 20px 50px;
+    margin: 10 15px;
+    background-color: #d37dcd;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+
+  }
+  
+  
+  
+
+
+      

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row align-items-start">
+            <div class="col">
+
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="index.html">Navbar</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                                </li>
+                                <!-- usuario  -->
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Usuario
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Agregar usuarios</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">Ver usuarios</a></li>
+                                    </ul>
+                                </li>
+                                <!-- Empleador-->
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Empleador
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Agregar empleado</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">Ver empleados</a></li>
+                                    </ul>
+                                </li>
+                                <!-- Trabajador-->
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Trabajador
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Agregar trabajador</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">Ver trabajadores</a></li>
+                                    </ul>
+                                </li>
+                                <!--Liquidacion -->
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">Liquidacion</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Nueva liquidacion</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">Ver liquidaciones</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <form class="d-flex" role="search">
+                                <button class="btn btn-outline-success" type="submit">Cerrar sesion</button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="container_form">
+                    <div class="row">
+                        <div class="col-6 m-auto">
+                            <form>
+                                <div class="container text-center">
+                                    <div class="col mb-4 mt-4">
+                                        <h3>Registrar Usuario</h3>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputNombre" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="exampleInputNombre"
+                                        aria-describedby="nombreHelp">
+                                    <div id="nombreHelp" class="form-text"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputApellido1" class="form-label">Primer apellido</label>
+                                    <input type="text" class="form-control" id="exampleInputApellido1"
+                                        aria-describedby="apellido1Help">
+                                    <div id="apellido1Help" class="form-text"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputRun" class="form-label">Run</label>
+                                    <input type="text" class="form-control" id="exampleInputRun"
+                                        aria-describedby="runHelp">
+                                    <div id="runHelp" class="form-text"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp">
+                                    <div id="emailHelp" class="form-text"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1">
+                                </div>
+                                <div class="form-check-inline">
+                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                        id="exampleRadios1" value="option1" checked>
+                                    <label class="form-check-label" for="exampleRadios1">Empleador</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                        id="exampleRadios2" value="option2">
+                                    <label class="form-check-label" for="exampleRadios2">Contador</label>
+                                </div>
+                                <br>
+                                <button type="submit" class="btn btn-dark mt-4">Registrar</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <footer class="text-center text-white" style="background-color: #c97cf5;">
+                    <div class="container pt-4">
+                        <div class="text-center text-dark p-3"
+                            style="background-color: rgba(159, 83, 186, 0.2); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                            <div class="container-footer">
+                                <h3 class="titulo-footer">Sprint Modulo 6</h3>
+                                <p class="lead ">@Bootcamp Java2023</p>
+                                <i class="fab fa-github-square" style="color: #0a0909;"></i>
+
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://kit.fontawesome.com/b446e10e54.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
