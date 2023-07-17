@@ -30,7 +30,7 @@ public class Liquidacion {
 
     @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "id_inst_salud",nullable = false)
-    private InstitucionSalud IdInstSalud;
+    private InstitucionSalud idInstSalud;
 
     @Column(nullable = false)
     private int monto_inst_salud;
@@ -38,7 +38,7 @@ public class Liquidacion {
 
     @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "id_inst_previsional",nullable = false)
-    private InstitucionPrevisional IdInstPrevisional;
+    private InstitucionPrevisional idInstPrevisional;
 
     @Column(nullable = false)
     private int monto_inst_previsional;

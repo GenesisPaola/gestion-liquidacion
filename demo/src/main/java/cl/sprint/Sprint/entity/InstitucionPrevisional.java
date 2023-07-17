@@ -22,6 +22,6 @@ public class InstitucionPrevisional {
     @OneToMany(mappedBy = "instPrevision")
     List<Trabajador> listaTrabajadores;
 
-    @OneToMany(mappedBy = "idInstPrevision")
+    @OneToMany(mappedBy = "idInstPrevisional")
     List<Liquidacion> liquidacionesPrev;
 }
