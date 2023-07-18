@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html xmlns:th="http://www.thymeleaf.org/" lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +25,7 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                                    <a class="nav-link active" aria-current="page" href="/bienvenida">Home</a>
                                 </li>
                                 <!-- usuario  -->
 
@@ -36,11 +35,11 @@
                                         Usuario
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Agregar usuarios</a></li>
+                                        <li><a class="dropdown-item" href="/usuario/crearUsuario">Agregar usuarios</a></li>
                                         <li>
                                             <hr class="dropdown-divider">
                                         </li>
-                                        <li><a class="dropdown-item" href="#">Ver usuarios</a></li>
+                                        <li><a class="dropdown-item" href="/usuario">Ver usuarios</a></li>
                                     </ul>
                                 </li>
                                 <!-- Empleador-->
@@ -104,41 +103,37 @@
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleInputNombre" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" id="exampleInputNombre"
-                                        aria-describedby="nombreHelp">
-                                    <div id="nombreHelp" class="form-text"></div>
+                                    <label for="nombre" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="nombre"> 
                                 </div>
+                                  <div class="mb-3">
+                                    <label for="apellido1" class="form-label">Primer apellido</label>
+                                    <input type="text" class="form-control" id="apellido1">
+                                </div>
+
                                 <div class="mb-3">
-                                    <label for="exampleInputApellido1" class="form-label">Primer apellido</label>
-                                    <input type="text" class="form-control" id="exampleInputApellido1"
-                                        aria-describedby="apellido1Help">
-                                    <div id="apellido1Help" class="form-text"></div>
+                                    <label for="run" class="form-label">Run</label>
+                                    <input type="number" class="form-control" id="run">
                                 </div>
+
                                 <div class="mb-3">
-                                    <label for="exampleInputRun" class="form-label">Run</label>
-                                    <input type="text" class="form-control" id="exampleInputRun"
-                                        aria-describedby="runHelp">
-                                    <div id="runHelp" class="form-text"></div>
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email">
                                 </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp">
-                                    <div id="emailHelp" class="form-text"></div>
+
+                                 <div class="mb-3">
+                                    <label for="clave" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="clave">
                                 </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1">
-                                </div>
-                                <div class="form-check-inline">
-                                    <input class="form-check-input" type="radio" name="exampleRadios"
-                                        id="exampleRadios1" value="option1" checked>
+
+                               <div class="form-check-inline">
+                                    <input class="form-check-input" type="radio" name="perfil.idPerfil" th:value="2"
+                                        id="exampleRadios1" checked>
                                     <label class="form-check-label" for="exampleRadios1">Empleador</label>
                                 </div>
                                 <div class="form-check-inline">
-                                    <input class="form-check-input" type="radio" name="exampleRadios"
-                                        id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="perfil.idPerfil" th:value="3"
+                                        id="exampleRadios2">
                                     <label class="form-check-label" for="exampleRadios2">Contador</label>
                                 </div>
                                 <br>

@@ -45,7 +45,7 @@ public class UsuarioController {
     public String registrarUsuario(@ModelAttribute Usuario usuario){
         usuario.setFecha_creacion((LocalDateTime.now()));
         objUsuarioService.registrarUsuario(usuario);
-        return "redirect:/bienvenida";// acomodar login
+        return "redirect:/bienvenida";
     }
     @GetMapping("/{idUsuario}/editar")
     public String mostrarFormularioEditarUsuario(@PathVariable int idUsuario,Model model){
