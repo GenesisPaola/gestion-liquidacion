@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 
@@ -17,26 +17,26 @@
 
                 <nav class="navbar navbar-expand-lg bg-body-tertiary">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href="/">Navbar</a>
+                        <a class="navbar-brand" href="index.html">Navbar</a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div class="collapse navbar-collapse " id="navbarSupportedContent">
-                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="/bienvenida">Home</a>
                                 </li>
                                 <!-- usuario  -->
-
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                         aria-expanded="false">
                                         Usuario
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="/usuario/crearUsuario">Agregar usuarios</a></li>
+                                        <li><a class="dropdown-item" href="/usuario/crearUsuario">Agregar usuarios</a>
+                                        </li>
                                         <li>
                                             <hr class="dropdown-divider">
                                         </li>
@@ -44,37 +44,34 @@
                                     </ul>
                                 </li>
                                 <!-- Empleador-->
-
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                         aria-expanded="false">
                                         Empleador
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Agregar empleado</a></li>
+                                        <li><a class="dropdown-item" href="/empleador/crearEmpleador">Agregar empleado</a></li>
                                         <li>
                                             <hr class="dropdown-divider">
                                         </li>
-                                        <li><a class="dropdown-item" href="#">Ver empleados</a></li>
+                                        <li><a class="dropdown-item" href="/listarEmpleador">Ver empleados</a></li>
                                     </ul>
                                 </li>
                                 <!-- Trabajador-->
-
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                         aria-expanded="false">
                                         Trabajador
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Agregar trabajador</a></li>
+                                        <li><a class="dropdown-item" href="trabajador/crearTrabajador">Agregar trabajador</a></li>
                                         <li>
                                             <hr class="dropdown-divider">
                                         </li>
-                                        <li><a class="dropdown-item" href="#">Ver trabajadores</a></li>
+                                        <li><a class="dropdown-item" href="/listarTrabajadores">Ver trabajadores</a></li>
                                     </ul>
                                 </li>
                                 <!--Liquidacion -->
-
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                         aria-expanded="false">Liquidacion</a>
@@ -99,7 +96,7 @@
                         <div class="col m-auto mt-5">
                             <div class="container text-center">
                                 <div class="col mb-4 mt-4">
-                                    <h3>Bienvenida "Usuario"</h3>
+                                    <h3>Bienvenida</h3>
                                 </div>
                             </div>
                             <div class="button-container">

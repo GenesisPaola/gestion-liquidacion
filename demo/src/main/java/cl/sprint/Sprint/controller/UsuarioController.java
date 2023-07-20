@@ -27,7 +27,7 @@ public class UsuarioController {
     //crear usuarios
     @GetMapping("/crearUsuario")
     public String mostrarFormularioCrearUsuario(Model model){
-        return "crearUsuario";
+        return "formUsuario";
     }
     @PostMapping("/crearUsuario")
     public String crearUsuario(@ModelAttribute Usuario usuario){
@@ -39,14 +39,15 @@ public class UsuarioController {
     // registrar usuario sin inicio de sesion con el form de registro
     @GetMapping("/registrar")
     public String mostrarFormularioRegistro(Model model){
-        return "iniciarSesion";// acomodar form registro
+        return "formUsuario";
     }
     @PostMapping("/registrar")
     public String registrarUsuario(@ModelAttribute Usuario usuario){
         usuario.setFecha_creacion((LocalDateTime.now()));
         objUsuarioService.registrarUsuario(usuario);
-        return "redirect:/bienvenida";
+        return "redirect:/iniciarSesion";
     }
+    //actualizar usuario
     @GetMapping("/{idUsuario}/editar")
     public String mostrarFormularioEditarUsuario(@PathVariable int idUsuario,Model model){
         Usuario usuarioParaEditar = objUsuarioService.buscarUsuarioPorId(idUsuario);

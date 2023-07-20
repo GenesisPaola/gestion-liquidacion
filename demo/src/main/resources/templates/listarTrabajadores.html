@@ -8,12 +8,10 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-
 <body>
     <div class="container">
         <div class="row align-items-start">
             <div class="col">
-
                 <nav class="navbar navbar-expand-lg bg-body-tertiary">
                     <div class="container-fluid">
                         <a class="navbar-brand" href="index.html">Navbar</a>
@@ -89,63 +87,47 @@
                         </div>
                     </div>
                 </nav>
-
-                <div class="container_formU">
-                    <div class="row">
-                        <div class="col-6 m-auto">
-                            <form>
-                                <div class="container text-center">
-                                    <div class="col mb-4 mt-4">
-                                        <h3>Crear Usuario</h3>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="run" class="form-label">Run</label>
-                                    <input type="number" class="form-control" id="run">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="nombre" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" id="nombre"> 
-                                </div>
-                                <div class="mb-3">
-                                    <label for="apellido1" class="form-label">Primer apellido</label>
-                                    <input type="text" class="form-control" id="apellido1">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="apellido2" class="form-label">Segundo apellido
-                                        (opcional)</label>
-                                    <input type="text" class="form-control" id="apellido2">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="telefono" class="form-label">Telefono</label>
-                                    <input type="number" class="form-control" id="telefono">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="email">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="clave" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="clave">
-                                </div>
-                                <div class="form-check-inline">
-                                    <input class="form-check-input" type="radio" name="perfil.idPerfil" th:value="2"
-                                        id="exampleRadios1" checked>
-                                    <label class="form-check-label" for="exampleRadios1">Empleador</label>
-                                </div>
-                                <div class="form-check-inline">
-                                    <input class="form-check-input" type="radio" name="perfil.idPerfil" th:value="3"
-                                        id="exampleRadios2">
-                                    <label class="form-check-label" for="exampleRadios2">Contador</label>
-                                </div>
-                                <br>
-                                <button type="submit" class="btn btn-dark mt-4">Registrar</button>
-                            </form>
-
-                        </div>
-                    </div>
+                <div class="boton_usuario mt-3 mb-2">
+                    <form class="d-flex" accion="/trabajador/crearTrabajador">
+                        <button type="submit" class="btn btn-secondary btn-lg">Agregar trabajador</button>
+                    </form>
                 </div>
-
+                <div class="mt-4 text-center">
+                    <table id="tablaTrabajadores" class="display table table-striped table-hover table-bordered">
+                        <thead>
+                        <tr class="table-dark">
+                            <th>ID</th>
+                            <th>Run</th>
+                            <th>Nombre</th>
+                            <th>Primer apellido</th> <!-- Primer apellido -->
+                            <th>Email</th>
+                            <th>Acción</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="trabajador: ${trabajadores}" >
+                            <td th:text="${trabajador.idTrabajador}"></td>
+                            <td th:text="${trabajador.run}"></td>
+                            <td th:text="${trabajador.nombre}"></td>
+                            <td th:text="${trabajador.apellido1}"></td>
+                            <td th:text="${trabajador.email}"></td>
+                            <td class="button-cell">
+                                <form th:action="@{/trabajador/eliminar/{idTrabajador}(idTrabajador=${trabajador.idTrabajador})}" th:method="post" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este trabajador?')">
+                                    <button type="submit" name="idUsuario"  class="icon-button">
+                                        <i class="fas fa-trash black-icon me-3"></i>
+                                    </button>
+                                </form>
+                                <form th:action="@{/trabajador/editar/{idTrabajador}(idTrabajador=${trabajador.idTrabajador})}" th:method="post" onsubmit="return confirm('¿Estás seguro de que deseas modificar este trabajador?')">
+                                    <button type="submit" name="idUsuario"  class="icon-button">
+                                        <i class="fas fa-edit black-icon"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                        </tbody>
+            
+                    </table>
+                </div>
                 <footer class="text-center text-white" style="background-color: #c97cf5;">
                     <div class="container pt-4">
                         <div class="text-center text-dark p-3"
@@ -154,7 +136,6 @@
                                 <h3 class="titulo-footer">Sprint Modulo 6</h3>
                                 <p class="lead ">@Bootcamp Java2023</p>
                                 <i class="fab fa-github-square" style="color: #0a0909;"></i>
-
                             </div>
                         </div>
                     </div>
@@ -162,11 +143,9 @@
             </div>
         </div>
     </div>
-    <script src="https://kit.fontawesome.com/b446e10e54.js" crossorigin="anonymous"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/b446e10e54.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+crossorigin="anonymous"></script>
 </body>
-
 </html>

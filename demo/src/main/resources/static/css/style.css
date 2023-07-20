@@ -67,8 +67,20 @@
     cursor: pointer;
 
   }
+  .boton_usuario{
+    float: left;
+  }
   
-  
+  .icon-button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+}
+.button-cell {
+  display: flex;
+  justify-content: center;
+}
+
   
 
 
