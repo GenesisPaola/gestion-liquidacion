@@ -23,24 +23,20 @@ public class UsuarioRestController {
         return objUsuarioService.registrarUsuario(usuario);
     }
 
-    @GetMapping("/{idUsuario}")//traer info
-    public Usuario buscarUsuarioPorId(@PathVariable int idUsuario){
-        return objUsuarioService.buscarUsuarioPorId(idUsuario);
+    @GetMapping("/{id_usuario}")//traer info
+    public Usuario buscarUsuarioPorId(@PathVariable int id_usuario){
+        return objUsuarioService.buscarUsuarioPorId(id_usuario);
     }
     @GetMapping
     public List<Usuario> listarUsuarios(){
         return objUsuarioService.listarUsuarios();
     }
-    @PutMapping("/{idUsuario}")
-    public Usuario actualizarUsuario(@RequestBody Usuario usuarioActualizar,@PathVariable int idUsuario){
-        return objUsuarioService.actualizarUsuario(usuarioActualizar,idUsuario);
+    @PutMapping("/{id_usuario}")
+    public Usuario actualizarUsuario(@RequestBody Usuario usuarioActualizar,@PathVariable int id_usuario){
+        return objUsuarioService.actualizarUsuario(usuarioActualizar,id_usuario);
     }
-    @DeleteMapping //eliminar
-    public void eliminarUsuario(@RequestBody Usuario usuario){
-        objUsuarioService.eliminarUsuario(usuario);
-    }
-    @DeleteMapping("/{idUsuario}")
-    public void eliminarUsuario2(@PathVariable int idUsuario){
-        objUsuarioService.eliminarUsuario2(idUsuario);
+    @DeleteMapping("/{id_usuario}")
+    public void eliminarUsuario2(@PathVariable int id_Usuario){
+        objUsuarioService.eliminarUsuario2(id_Usuario);
     }
 }

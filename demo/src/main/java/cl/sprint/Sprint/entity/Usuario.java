@@ -11,6 +11,7 @@ import java.util.List;
 @Table(name = "usuario")
 public class Usuario {
     @Id
+    @Column(nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_usuario;
 
@@ -30,7 +31,7 @@ public class Usuario {
     private String apellido_2;
 
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_perfil",nullable = false)
+    @JoinColumn(name = "id_perfil",nullable = false) //se utiliza para especificar la columna de la tabla de la base de datos que se utilizará para establecer la relación.
     private Perfil perfil;
 
     @Column(length = 100, nullable = false)

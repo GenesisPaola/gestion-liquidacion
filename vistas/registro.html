@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row align-items-start">
+            <div class="col">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary bg-primary">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">
+                            <img src="imagenes/logo.png" alt="Logo" width="60" height="60">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/usuario/crearUsuario">Registrarse</a>
+                                </li>
+                                <button type="submit" class="btnIniciar btn-outline-secondary">iniciar sesion</button>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div class="container_form">
+                    <div class="row">
+                        <div class="col-6 m-auto">
+                            <form>
+                                <div class="container text-center">
+                                    <div class="col mb-4 mt-4">
+                                        <h3>Registrar Usuario</h3>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="nombre" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="nombre">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="apellido1" class="form-label">Primer apellido</label>
+                                    <input type="text" class="form-control" id="apellido1">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="run" class="form-label">Run</label>
+                                    <input type="number" class="form-control" id="run">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="clave" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="clave">
+                                </div>
+
+                                <div class="form-check-inline">
+                                    <input class="form-check-input" type="radio" name="perfil.idPerfil" th:value="2"
+                                        id="exampleRadios1" checked>
+                                    <label class="form-check-label" for="exampleRadios1">Empleador</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input class="form-check-input" type="radio" name="perfil.idPerfil" th:value="3"
+                                        id="exampleRadios2">
+                                    <label class="form-check-label" for="exampleRadios2">Contador</label>
+                                </div>
+                                <br>
+                                <button type="submit" class="btn btn-dark mt-4">Registrar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <footer class="text-center text-white" style="background-color: #c97cf5;">
+                    <div class="container pt-4">
+                        <div class="text-center text-dark p-3"
+                            style="background-color: rgba(159, 83, 186, 0.2); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                            <div class="container-footer">
+                                <h3 class="titulo-footer">Sprint Modulo 6</h3>
+                                <p class="lead ">@Bootcamp Java2023</p>
+                                <i class="fab fa-github-square" style="color: #0a0909;"></i>
+
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/b446e10e54.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
