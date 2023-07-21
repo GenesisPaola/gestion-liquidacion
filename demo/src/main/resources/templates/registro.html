@@ -14,85 +14,11 @@
     <div class="container">
         <div class="row align-items-start">
             <div class="col">
-                <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                    <div class="container-fluid">
-                        <a class="navbar-brand" href="index.html">Navbar</a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="/bienvenida">Home</a>
-                                </li>
-                                <!-- usuario  -->
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        Usuario
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="/usuario/crearUsuario">Agregar usuarios</a>
-                                        </li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="/usuario">Ver usuarios</a></li>
-                                    </ul>
-                                </li>
-                                <!-- Empleador-->
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        Empleador
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="/empleador/crearEmpleador">Agregar empleado</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="/listarEmpleador">Ver empleados</a></li>
-                                    </ul>
-                                </li>
-                                <!-- Trabajador-->
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        Trabajador
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="trabajador/crearTrabajador">Agregar trabajador</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="/listarTrabajadores">Ver trabajadores</a></li>
-                                    </ul>
-                                </li>
-                                <!--Liquidacion -->
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">Liquidacion</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Nueva liquidacion</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="#">Ver liquidaciones</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <form class="d-flex" role="search">
-                                <button class="btn btn-outline-success" type="submit">Cerrar sesion</button>
-                            </form>
-                        </div>
-                    </div>
-                </nav>
+               <header th:include="~{../static/html/header}"></header>
                 <div class="container_form">
                     <div class="row">
                         <div class="col-6 m-auto">
-                            <form>
+                            <form th:action="@{/usuario/registrar}" id="registro" th:method="post">
                                 <div class="container text-center">
                                     <div class="col mb-4 mt-4">
                                         <h3>Registrar Usuario</h3>
@@ -100,36 +26,35 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="nombre" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" id="nombre">
+                                    <input type="text" class="form-control" id="nombre" name="nombre" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="apellido1" class="form-label">Primer apellido</label>
-                                    <input type="text" class="form-control" id="apellido1">
+                                    <input type="text" class="form-control" id="apellido1" name="apellido1"  required>
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="run" class="form-label">Run</label>
-                                    <input type="number" class="form-control" id="run">
+                                    <input type="number" class="form-control" id="run" name="run" required>
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="email">
+                                    <input type="email" class="form-control" id="email" name="email" required>
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="clave" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="clave">
+                                    <input type="password" class="form-control" id="clave" name="clave" required>
                                 </div>
-
                                 <div class="form-check-inline">
                                     <input class="form-check-input" type="radio" name="perfil.idPerfil" th:value="2"
-                                        id="exampleRadios1" checked>
+                                           id="exampleRadios1" checked>
                                     <label class="form-check-label" for="exampleRadios1">Empleador</label>
                                 </div>
                                 <div class="form-check-inline">
                                     <input class="form-check-input" type="radio" name="perfil.idPerfil" th:value="3"
-                                        id="exampleRadios2">
+                                           id="exampleRadios2">
                                     <label class="form-check-label" for="exampleRadios2">Contador</label>
                                 </div>
                                 <br>
@@ -138,18 +63,7 @@
                         </div>
                     </div>
                 </div>
-                <footer class="text-center text-white" style="background-color: #c97cf5;">
-                    <div class="container pt-4">
-                        <div class="text-center text-dark p-3"
-                            style="background-color: rgba(159, 83, 186, 0.2); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
-                            <div class="container-footer">
-                                <h3 class="titulo-footer">Sprint Modulo 6</h3>
-                                <p class="lead ">@Bootcamp Java2023</p>
-                                <i class="fab fa-github-square" style="color: #0a0909;"></i>
-
-                            </div>
-                        </div>
-                    </div>
+                <footer th:include="~{../static/html/footer}">
                 </footer>
             </div>
         </div>

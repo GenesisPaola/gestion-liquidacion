@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/style.css">    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
 </head>
 
 <body>
@@ -15,7 +16,7 @@
 
                 <nav class="navbar navbar-expand-lg bg-body-tertiary">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href="index.html">Navbar</a>
+                        <a class="navbar-brand" href="/index">Navbar</a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -92,7 +93,7 @@
                 <div class="container_formU">
                     <div class="row">
                         <div class="col-6 m-auto">
-                            <form>
+                            <form th:action="@{/usuario/registrar}" id="registro" th:method="post">
                                 <div class="container text-center">
                                     <div class="col mb-4 mt-4">
                                         <h3>Crear Usuario</h3>
@@ -100,32 +101,32 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="run" class="form-label">Run</label>
-                                    <input type="number" class="form-control" id="run">
+                                    <input type="number" class="form-control" id="run" name="run" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="nombre" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" id="nombre"> 
+                                    <input type="text" class="form-control" id="nombre" name="nombre" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="apellido1" class="form-label">Primer apellido</label>
-                                    <input type="text" class="form-control" id="apellido1">
+                                    <input type="text" class="form-control" id="apellido1" name="apellido1" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="apellido2" class="form-label">Segundo apellido
                                         (opcional)</label>
-                                    <input type="text" class="form-control" id="apellido2">
+                                    <input type="text" class="form-control" id="apellido2" name="apellido2">
                                 </div>
                                 <div class="mb-3">
                                     <label for="telefono" class="form-label">Telefono</label>
-                                    <input type="number" class="form-control" id="telefono">
+                                    <input type="number" class="form-control" id="telefono" name="telefono" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="email">
+                                    <input type="email" class="form-control" id="email" name="email" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="clave" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="clave">
+                                    <input type="password" class="form-control" id="clave" name="clave" required>
                                 </div>
                                 <div class="form-check-inline">
                                     <input class="form-check-input" type="radio" name="perfil.idPerfil" th:value="2"
@@ -145,18 +146,7 @@
                     </div>
                 </div>
 
-                <footer class="text-center text-white" style="background-color: #c97cf5;">
-                    <div class="container pt-4">
-                        <div class="text-center text-dark p-3"
-                            style="background-color: rgba(159, 83, 186, 0.2); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
-                            <div class="container-footer">
-                                <h3 class="titulo-footer">Sprint Modulo 6</h3>
-                                <p class="lead ">@Bootcamp Java2023</p>
-                                <i class="fab fa-github-square" style="color: #0a0909;"></i>
-
-                            </div>
-                        </div>
-                    </div>
+                <footer th:include="~{../static/html/footer}">
                 </footer>
             </div>
         </div>

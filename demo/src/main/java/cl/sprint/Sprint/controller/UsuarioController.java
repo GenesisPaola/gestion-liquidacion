@@ -31,7 +31,7 @@ public class UsuarioController {
     }
     @PostMapping("/crearUsuario")
     public String crearUsuario(@ModelAttribute Usuario usuario){
-        usuario.setFecha_creacion(LocalDateTime.now());
+        usuario.setFechaCreacion(LocalDateTime.now());
         objUsuarioService.crearUsuario(usuario); //se llama al método crearUsuario() del servicio IUsuarioService, que ha sido inyectado en el controlador previamente. El objeto Usuario que recibimos en el método se pasa como argumento a este método del servicio para guardar el nuevo usuario en la base de datos.
         return "redirect:/usuario";
     }
@@ -43,36 +43,36 @@ public class UsuarioController {
     }
     @PostMapping("/registrar")
     public String registrarUsuario(@ModelAttribute Usuario usuario){
-        usuario.setFecha_creacion((LocalDateTime.now()));
+        usuario.setFechaCreacion((LocalDateTime.now()));
         objUsuarioService.registrarUsuario(usuario);
-        return "redirect:/iniciarSesion";
+        return "redirect:/login";
     }
     //actualizar usuario
     //metodo para mostrar el form para buscar usuario x id
-    @GetMapping("/{id_usuario}")
-    public String buscarUsuarioPorId(@PathVariable int id_usuario, Model model) { //se utiliza para capturar el valor del ID del usuario desde la URL y asignarlo a la variable idUsuario.
-        Usuario usuario = objUsuarioService.buscarUsuarioPorId(id_usuario); //Este método busca el usuario en la base de datos utilizando el ID proporcionado y devuelve un objeto Usuario
+    @GetMapping("/{idUsuario}")
+    public String buscarUsuarioPorId(@PathVariable int idUsuario, Model model) { //se utiliza para capturar el valor del ID del usuario desde la URL y asignarlo a la variable idUsuario.
+        Usuario usuario = objUsuarioService.buscarUsuarioPorId(idUsuario); //Este método busca el usuario en la base de datos utilizando el ID proporcionado y devuelve un objeto Usuario
         model.addAttribute("usuario", usuario); //se agrega este objeto Usuario al modelo con el nombre "usuario" usando el método addAttribute() del objeto model
         return "redirect:/usuario";
     }
     // metodo para mostrar el form de editar un usuario x su id
-    @PostMapping("/editar/{id_usuario}")
-    public String mostrarFormularioEditarUsuario(@PathVariable int id_usuario, Model model){
-        model.addAttribute("usuario",objUsuarioService.buscarUsuarioPorId(id_usuario)); //llamo al método buscarUsuarioPorId(idUsuario) del servicio IUsuarioService para obtener el objeto Usuario que se desea editar.
+    @PostMapping("/editar/{idUsuario}")
+    public String mostrarFormularioEditarUsuario(@PathVariable int idUsuario, Model model){
+        model.addAttribute("usuario",objUsuarioService.buscarUsuarioPorId(idUsuario)); //llamo al método buscarUsuarioPorId(idUsuario) del servicio IUsuarioService para obtener el objeto Usuario que se desea editar.
         return "editarUsuario";
     }
 
     //metodo para actualizar un usuario
-    @PostMapping("/actualizar/{id_usuario}")
-    public String actualizarUsuario(@ModelAttribute Usuario usuario, @PathVariable int id_usuario){  //@ModelAttribute Usuario usuario y @PathVariable int idUsuario se utilizan para capturar el objeto Usuario con los datos actualizados y el ID del usuario desde la URL, respectivamente.
-       objUsuarioService.actualizarUsuario(usuario, id_usuario); //llamo al método actualizarUsuario(usuario, idUsuario) del servicio IUsuarioService, pasando el objeto Usuario actualizado y el ID del usuario para actualizar los datos en la base de datos.
+    @PostMapping("/actualizar/{idUsuario}")
+    public String actualizarUsuario(@ModelAttribute Usuario usuario, @PathVariable int idUsuario){  //@ModelAttribute Usuario usuario y @PathVariable int idUsuario se utilizan para capturar el objeto Usuario con los datos actualizados y el ID del usuario desde la URL, respectivamente.
+       objUsuarioService.actualizarUsuario(usuario, idUsuario); //llamo al método actualizarUsuario(usuario, idUsuario) del servicio IUsuarioService, pasando el objeto Usuario actualizado y el ID del usuario para actualizar los datos en la base de datos.
        return "redirect:/usuario";
     }
 
     //eliminar usuario
-    @PostMapping("/eliminar/{id_usuario}")
-    public String eliminarUsuarioPorId(@PathVariable int id_usuario) {
-        objUsuarioService.eliminarUsuario2(id_usuario);
+    @PostMapping("/eliminar/{idUsuario}")
+    public String eliminarUsuarioPorId(@PathVariable int idUsuario) {
+        objUsuarioService.eliminarUsuario2(idUsuario);
         return "redirect:/usuario";
     }
 

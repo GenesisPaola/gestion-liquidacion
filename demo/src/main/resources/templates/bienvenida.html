@@ -17,7 +17,7 @@
 
                 <nav class="navbar navbar-expand-lg bg-body-tertiary">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href="index.html">Navbar</a>
+                        <a class="navbar-brand" href="/index">Navbar</a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,7 @@
                                 </li>
                                 <!-- usuario  -->
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    <a class="nav-link dropdown-toggle" href="/listarUsuarios" role="button" data-bs-toggle="dropdown"
                                         aria-expanded="false">
                                         Usuario
                                     </a>
@@ -101,16 +101,17 @@
                             </div>
                             <div class="button-container">
                                 <div class="button-row">
-                                    <button type="button" class="boton11">Crear Usuario </button>
-                                    <button type="button" class="boton11">Crear Empleador</button>
-                                    <button type="button" class="boton11">Crear Trabajador</button>
-                                    <button type="button" class="boton11">Crear Liquidacion</button>
+                                    <a href="/usuario/crearUsuario" class="btn boton11">Crear usuario</a>
+                                    <a href="#" class="btn boton11">Crear empleador</a>
+                                    <a href="#" class="btn boton11">Crear trabajador</a>
+                                    <a href="#" class="btn boton11">Crear liquidacion</a>
                                 </div>
                                 <div class="button-row">
-                                    <button type="button" class="boton12">Ver y/o editar usuarios</button>
-                                    <button type="button" class="boton12">Ver y/o editar empleador</button>
-                                    <button type="button" class="boton12">Ver y/o editar trabajador</button>
-                                    <button type="button" class="boton12">Ver y/o editar liquidacion</button>
+                                    <a href="/usuario" class="btn boton12">ver y/o editar usuario</a>
+                                    <a href="#" class="btn boton12">ver y/o editar empleador</a>
+                                    <a href="#" class="btn boton12">ver y/o editar trabajador</a>
+                                    <a href="#" class="btn boton12">ver y/o editar liquidacion</a>
+
                                 </div>
                             </div>
                             <div class="container text-center">
@@ -123,36 +124,11 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
-                <footer class="text-center text-white" style="background-color: #c97cf5;">
-                    <div class="container pt-4">
-                        <div class="text-center text-dark p-3"
-                            style="background-color: rgba(159, 83, 186, 0.2); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
-                            <div class="container-footer">
-                                <h3 class="titulo-footer">Sprint Modulo 6</h3>
-                                <p class="lead ">@Bootcamp Java2023</p>
-                                <i class="fab fa-github-square" style="color: #0a0909;"></i>
-
-                            </div>
-                        </div>
-                    </div>
+                <footer th:include="~{../static/html/footer}">
                 </footer>
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
 
     <script src="https://kit.fontawesome.com/b446e10e54.js" crossorigin="anonymous"></script>
 

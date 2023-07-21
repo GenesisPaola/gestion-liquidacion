@@ -41,11 +41,10 @@ public class UsuarioImpl implements IUsuarioService {
         usuario.setRun(usuarioActulizar.getRun());
         usuario.setClave(usuarioActulizar.getClave());
         usuario.setNombre(usuarioActulizar.getNombre());
-        usuario.setApellido_1(usuarioActulizar.getApellido_1());
-        usuario.setApellido_2(usuarioActulizar.getApellido_2());
+        usuario.setApellido1(usuarioActulizar.getApellido1());
+        usuario.setApellido2(usuarioActulizar.getApellido2());
         usuario.setPerfil(usuarioActulizar.getPerfil());
         usuario.setEmail(usuarioActulizar.getEmail());
-        usuario.setFecha_creacion(usuarioActulizar.getFecha_creacion());
         usuario.setTelefono(usuarioActulizar.getTelefono());
         return objUsuarioRepo.save(usuario);
     }

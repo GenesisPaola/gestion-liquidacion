@@ -10,8 +10,8 @@ import java.util.List;
 @Table(name = "perfil")
 public class Perfil {
     @Id
-    @Column(nullable = false)
-    private int id_perfil;
+    @Column(nullable = false, name = "id_perfil")
+    private int idPerfil;
 
     @Column(length = 50, nullable = false)
     private String descripcion;
