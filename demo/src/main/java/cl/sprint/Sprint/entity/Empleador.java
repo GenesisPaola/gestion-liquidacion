@@ -10,9 +10,9 @@ import java.util.List;
 @Table(name = "empleador")
 public class Empleador {
     @Id
-    @Column(nullable = false)
+    @Column(nullable = false, name = "id_empleador")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_empleador;
+    private int idEmpleador;
 
     @Column(nullable = false, unique = true)
     private int run;
@@ -20,11 +20,11 @@ public class Empleador {
     @Column(nullable = false)
     private String nombre;
 
-    @Column(nullable = false)
-    private String apellido_1;
+    @Column(nullable = false, name = "apellido_1")
+    private String apellido1;
 
-    @Column
-    private String apellido_2;
+    @Column(name = "apellido_2")
+    private String apellido2;
 
     @Column(length = 500)
     private String direccion;
