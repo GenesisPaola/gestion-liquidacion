@@ -1,4 +1,7 @@
 package cl.sprint.Sprint.repository;
 
-public interface ILiquidacionRepo {
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ILiquidacionRepo  {
 }

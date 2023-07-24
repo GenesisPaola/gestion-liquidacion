@@ -4,16 +4,15 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Data
 @Entity
 @Table(name = "liquidacion")
 public class Liquidacion {
     @Id
-    @Column(nullable = false)
+    @Column(nullable = false, name = "id_liquidacion")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_liquidacion;
+    private long idLiquidacion;
 
     @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "id_trabajador", nullable = false)
@@ -22,32 +21,32 @@ public class Liquidacion {
     @Column(nullable = false)
     private LocalDate periodo;
 
-    @Column(nullable = false)
-    private int sueldo_imponible;
+    @Column(nullable = false, name = "sueldo_imponible")
+    private int sueldoImponible;
 
-    @Column(nullable = false)
-    private int sueldo_liquido;
+    @Column(nullable = false, name = "sueldo_liquido")
+    private int sueldoLiquido;
 
     @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "id_inst_salud",nullable = false)
     private InstitucionSalud idInstSalud;
 
-    @Column(nullable = false)
-    private int monto_inst_salud;
+    @Column(nullable = false, name = "monto_inst_salud")
+    private int montoInstSalud;
 
 
     @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "id_inst_previsional",nullable = false)
     private InstitucionPrevisional idInstPrevisional;
 
-    @Column(nullable = false)
-    private int monto_inst_previsional;
+    @Column(nullable = false,name = "monto_inst_previsional")
+    private int montoInstPrevisional;
 
-    @Column(nullable = false)
-    private int total_descuento;
+    @Column(nullable = false,name = "total_descuento")
+    private int totalDescuento;
 
-    @Column(nullable = false)
-    private int total_haberes;
+    @Column(nullable = false, name = "total_haberes")
+    private int totalHaberes;
 
     @Column(nullable = false)
    private int anticipo;

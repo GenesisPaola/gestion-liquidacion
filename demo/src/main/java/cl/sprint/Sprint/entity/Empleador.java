@@ -17,22 +17,22 @@ public class Empleador {
     @Column(nullable = false, unique = true)
     private int run;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 100)
     private String nombre;
 
-    @Column(nullable = false, name = "apellido_1")
+    @Column(nullable = false, name = "apellido_1", length = 100)
     private String apellido1;
 
-    @Column(name = "apellido_2")
+    @Column(name = "apellido_2", length = 100)
     private String apellido2;
 
     @Column(length = 500)
     private String direccion;
 
-    @Column
+    @Column(length = 100)
     private String email;
 
-    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name = "id_usuario", nullable = false)
     private Usuario usuario;
 
@@ -40,9 +40,7 @@ public class Empleador {
     private long telefono;
 
     //relacion muchos a muchos table intermedia
-    @ManyToMany
-    @JoinTable(name = "empl_trab",
-            joinColumns = @JoinColumn(name = "id_empleador", nullable = false),
-            inverseJoinColumns = @JoinColumn(name = "id_trabajador",nullable = false))
+
+    @ManyToMany(mappedBy = "listaEmpleadores")
     private List<Trabajador> trabajadores;
 }
