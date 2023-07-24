@@ -10,14 +10,14 @@ import java.util.List;
 @Table(name = "institucion_prevision")
 public class InstitucionPrevisional {
     @Id
-    @Column(nullable = false)
-    private int id_inst_prevision;
+    @Column(nullable = false, name = "id_inst_prevision")
+    private int idInstPrevision;
 
-    @Column(nullable = false)
+    @Column(nullable = false,length = 50)
     private String descripcion;
 
-    @Column(nullable = false)
-    private float porc_dcto;
+    @Column(nullable = false,name = "porc_dcto")
+    private float porcDcto;
 
     @OneToMany(mappedBy = "instPrevision")
     List<Trabajador> listaTrabajadores;

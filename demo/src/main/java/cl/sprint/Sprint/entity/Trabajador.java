@@ -10,23 +10,23 @@ import java.util.List;
 @Table(name = "trabajador")
 public class Trabajador {
     @Id
-    @Column(nullable = false)
+    @Column(nullable = false, name = "id_trabajador")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idTrabajador;
 
     @Column(nullable = false, unique = true)
     private int run;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 100)
     private String nombre;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "apellido_1",length = 100)
     private String apellido1;
 
-    @Column
+    @Column(name = "apellido_2", length = 100)
     private String apellido2;
 
-    @Column
+    @Column(length = 100)
     private String email;
 
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
@@ -40,12 +40,13 @@ public class Trabajador {
     @Column(nullable = false)
     private long telefono;
 
-    @OneToMany
-    List<Liquidacion> listaTrabajadores;
+    @OneToMany (mappedBy = "trabajador")
+    List<Liquidacion> listaLiquidacion;
 
+    //Relacion muchos a muchos de la tabla intermedia
     @ManyToMany
-    @JoinTable(name = "empl_trab",
-            joinColumns = @JoinColumn(name = "id_trabajador"),
-            inverseJoinColumns = @JoinColumn(name = "id_empleador"))
+    @JoinTable(name = "empl_trab", // tabla intermedia
+            joinColumns = @JoinColumn(name = "id_trabajador",nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "id_empleador", nullable = false))
     private List<Empleador> listaEmpleadores;
 }

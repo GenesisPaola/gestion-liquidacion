@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/" lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Document</title>
+</head>
+<body>
+<div class="container">
+  <div class="row align-items-start">
+    <div class="col">
+      <header th:include="~{../static/html/headerlog.html}"></header>
+      <div class="container_formU">
+        <div class="row">
+          <div class="col-6 m-auto">
+            <form th:action="@{/trabajador/actualizar/{idTrabajador}(idTrabajador=${trabajador.getIdTrabajador()})}" id="contactForm" th:method="post">
+              <div class="container text-center">
+                <div class="col mb-4 mt-4">
+                  <h3>Editar Trabajador</h3>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="run" class="form-label">Run</label>
+                <input type="number" class="form-control" id="run" name="run" th:value="${trabajador.getRun()}" aria-label="Disabled input" disabled required>
+              </div>
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" th:value="${trabajador.getNombre()}" required>
+              </div>
+              <div class="mb-3">
+                <label for="apellido1" class="form-label">Primer apellido</label>
+                <input type="text" class="form-control" id="apellido1" name="apellido1" th:value="${trabajador.getApellido1()}" required>
+              </div>
+              <div class="mb-3">
+                <label for="apellido2" class="form-label">Segundo apellido (opcional)</label>
+                <input type="text" class="form-control" id="apellido2" name="apellido2" th:value="${trabajador.getApellido2()}">
+              </div>
+              <div class="mb-3">
+                <label for="telefono" class="form-label">Telefono</label>
+                <input type="number" class="form-control" id="telefono" name="telefono" th:value="${trabajador.getTelefono()}">
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" th:value="${trabajador.getEmail()}" required>
+              </div>
+              <div class="mt-4 mb-3">
+                <label for="previsionId" class="form-label">Seleccionar AFP</label>
+                <select class="form-control" id="previsionId" name="previsionId">
+                  <option th:each="prevision : ${prevision}"
+                          th:value="${prevision.idInstPrevision}"
+                          th:text="${prevision.descripcion}"
+                          th:selected="${prevision.idInstPrevision == trabajador.instPrevision.idInstPrevision}"><!-- Establecer el atributo selected para el usuario actualmente asociado -->
+                  </option>
+                </select>
+              </div>
+              <div class="mt-4 mb-3">
+                <label for="saludId" class="form-label">Institucion de la salud</label>
+                <select class="form-control" id="saludId" name="saludId">
+                  <option th:each="salud: ${salud}"
+                          th:value="${salud.idInstSalud}"
+                          th:text="${salud.descripcion}"
+                          th:selected="${salud.idInstSalud == trabajador.instSalud.idInstSalud}" ><!-- Establecer el atributo selected para el usuario actualmente asociado -->
+                  </option>
+                </select>
+              </div>
+              <div class="mt-4 mb-3">
+                <label for="empleadorId" class="form-label">Empleadores</label>
+                <select class="form-control" id="empleadorId" name="empleadorId">
+                  <option th:each="empleador: ${empleador}"
+                          th:value="${empleador.idEmpleador}"
+                          th:text="${empleador.nombre + ' ' + empleador.apellido1}"
+                          th:th:selected="${trabajador.listaEmpleadores.contains(empleador)}">
+
+                  </option>
+                </select>
+              </div>
+              <br>
+              <button type="submit" class="btn btn-dark mt-4">Editar trabajador</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <footer th:include="~{../static/html/footer}"></footer>
+    </div>
+  </div>
+</div>
+<script src="https://kit.fontawesome.com/b446e10e54.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+</html>

@@ -38,7 +38,6 @@ public class UsuarioImpl implements IUsuarioService {
     @Override
     public Usuario actualizarUsuario(Usuario usuarioActulizar, int id_usuario) {
         Usuario usuario = objUsuarioRepo.findById(id_usuario).orElseThrow(()-> new NoSuchElementException("Usuario no encontrado"));
-        usuario.setRun(usuarioActulizar.getRun());
         usuario.setClave(usuarioActulizar.getClave());
         usuario.setNombre(usuarioActulizar.getNombre());
         usuario.setApellido1(usuarioActulizar.getApellido1());
