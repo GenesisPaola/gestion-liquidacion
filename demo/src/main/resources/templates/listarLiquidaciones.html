@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+    <div class="row align-items-start">
+        <div class="col">
+            <header th:include="~{../static/html/headerlog.html}"></header>
+            <div class="boton_usuario mt-3 mb-2">
+                <a href="/liquidacion/crearLiquidacion" class="btn btn-dark">Agregar liquidaciones</a>
+            </div>
+            <div class="mt-4 text-center">
+                <table id="tablaLiquidaciones" class="display table table-striped table-hover table-bordered">
+                    <thead>
+                    <tr class="table-dark">
+                        <th>ID</th>
+                        <th>Id Trabajador</th>
+                        <th>Nombre Trabajador</th>
+                        <th>Sueldo imponible</th>
+                        <th>Sueldo Liquido</th>
+                        <th>Acción</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="liquidacion: ${liquidaciones}" >
+                        <td th:text="${liquidacion.idLiquidacion}"></td>
+                        <td th:text="${liquidacion.trabajador.idTrabajador}"></td>
+                        <td th:text="${liquidacion.trabajador.nombre + '' + liquidacion.trabajador.apellido1}"></td>
+                        <td th:text="${liquidacion.sueldoImponible}"></td>
+                        <td th:text="${liquidacion.sueldoLiquido}"></td>
+                        <td class="button-cell">
+                            <form th:action="@{/liquidacion/eliminar/{idLiquidacion}(idLiquidacion=${liquidacion.idLiquidacion})}" th:method="post" onsubmit="return confirm('¿Estás seguro de que deseas eliminar esta liquidación?')">
+
+                            <button type="submit" name="idUsuario"  class="icon-button">
+                                    <i class="fas fa-trash black-icon me-3"></i>
+                                </button>
+                            </form>
+                            <form th:action="@{/liquidacion/editar/{idLiquidacion}(idLiquidacion=${liquidacion.idLiquidacion})}" th:method="post" onsubmit="return confirm('¿Estás seguro de que deseas modificar esta liquidación?')">
+
+                            <button type="submit" name="idUsuario"  class="icon-button">
+                                    <i class="fas fa-edit black-icon"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    </tbody>
+
+                </table>
+            </div>
+            <footer th:include="~{../static/html/footer}">
+            </footer>
+        </div>
+    </div>
+</div>
+<script src="https://kit.fontawesome.com/b446e10e54.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+</html>
